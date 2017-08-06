@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Span Wave Animation</title>
+
+<style type="text/css">
+
+.animation-pressure, .animation-pressure > span{
+	position:relative;
+	display:inline-block;
+	height:12px;
+	line-height:1;
+}
+.animation-pressure > span{
+	vertical-align:top;
+}
+.animation-pressure{
+	padding:0px 10px;
+}
+.animation-pressure > span{
+	padding:0px 8px;
+}
+.animation-pressure::before, .animation-pressure::after, .animation-pressure > span::before, .animation-pressure > span::after{
+	content:"";
+	width:6px;
+	height:6px;
+	position:absolute;
+	top:3px;
+	animation-name:anim;
+	animation-duration:1.4s;
+	animation-iteration-count:infinite;
+	animation-timing-function: cubic-bezier(.45,.05,.55,.95);
+}
+.animation-pressure::before, .animation-pressure > span::before{
+	left:0;
+}
+.animation-pressure::after, .animation-pressure > span::after{
+	right:0;
+}
+
+.animation-pressure::before{
+	animation-delay:0;
+	background-color: green;
+}
+.animation-pressure > span::before{
+	animation-delay:0.15s;
+	background-color: green;
+}
+.animation-pressure > span::after{
+	animation-delay:0.30s;
+	background-color: green;
+}
+.animation-pressure::after{
+	animation-delay:0.45s;
+	background-color: green;
+}
+
+@keyframes anim{
+	0%{
+		top:3px;
+		height:3px;
+	}
+	22%{
+		top:0px;
+		height:9px;
+	}
+	44%{
+		top:3px;
+		height:3px;
+	}
+	100%{
+		top:3px;
+		height:3px;
+	}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<span class="animation-pressure"><span></span></span>
+
+</body>
+</html>
