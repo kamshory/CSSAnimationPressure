@@ -17,6 +17,7 @@
 }
 .animation-pressure{
 	padding:0px 10px;
+	vertical-align:middle;
 }
 .animation-pressure > span{
 	padding:0px 8px;
@@ -28,7 +29,7 @@
 	position:absolute;
 	top:3px;
 	animation-name:anim;
-	animation-duration:1.4s;
+	animation-duration:1.0s;
 	animation-iteration-count:infinite;
 	animation-timing-function: cubic-bezier(.45,.05,.55,.95);
 }
@@ -44,34 +45,34 @@
 	background-color: green;
 }
 .animation-pressure > span::before{
-	animation-delay:0.15s;
+	animation-delay:0.12s;
 	background-color: green;
 }
 .animation-pressure > span::after{
-	animation-delay:0.30s;
+	animation-delay:0.24s;
 	background-color: green;
 }
 .animation-pressure::after{
-	animation-delay:0.45s;
+	animation-delay:0.36s;
 	background-color: green;
 }
 
 @keyframes anim{
 	0%{
-		top:3px;
-		height:3px;
+		top:4px;
+		height:4px;
 	}
 	22%{
 		top:0px;
-		height:9px;
+		height:12px;
 	}
 	44%{
-		top:3px;
-		height:3px;
+		top:4px;
+		height:4px;
 	}
 	100%{
-		top:3px;
-		height:3px;
+		top:4px;
+		height:4px;
 	}
 }
 
@@ -81,7 +82,7 @@
 
 <body>
 
-<span class="animation-pressure"><span></span></span>
+text before <span class="animation-pressure"><span></span></span> text after
 
 </body>
 </html>
